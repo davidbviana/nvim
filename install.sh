@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sudo apt-get update && sudo apt-get -y install neovim
+sudo add-apt-repository -y ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get -y install neovim
 
 temp_dir=$(mktemp -d)
 git clone https://github.com/davidbviana/nvim.git "$temp_dir"
