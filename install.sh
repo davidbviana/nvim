@@ -11,10 +11,10 @@ temp_dir=$(mktemp -d)
 git clone https://github.com/davidbviana/nvim.git "$temp_dir"
 cd "$temp_dir"
 
+sudo echo 'export PATH="/opt/nvim/bin:$PATH"' >> ~/.bashrc
+
 mkdir -p ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 mkdir -p ~/.config/nvim/autoload
 cp autoload/plug.vim ~/.config/nvim/autoload/plug.vim
 /opt/nvim/bin/nvim +'PlugInstall --sync' +qa
-
-sudo echo 'export PATH="/opt/nvim/bin:$PATH"' >> ~/.bashrc
