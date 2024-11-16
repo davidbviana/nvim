@@ -9,5 +9,5 @@ cd "$temp_dir"
 mkdir -p ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 mkdir -p ~/.config/nvim/autoload
-cp plug.vim ~/.config/nvim/autoload/plug.vim
+cp autoload/plug.vim ~/.config/nvim/autoload/plug.vim
 nvim +'PlugInstall --sync' +qa
