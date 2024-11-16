@@ -7,9 +7,6 @@ sudo cp -R nvim-linux64/* /opt/nvim/
 rm nvim-linux64.tar.gz
 rm -rf nvim-linux64
 
-sudo echo 'export PATH="/opt/nvim/bin:$PATH"' >> ~/.bashrc
-source .bashrc
-
 temp_dir=$(mktemp -d)
 git clone https://github.com/davidbviana/nvim.git "$temp_dir"
 cd "$temp_dir"
@@ -18,4 +15,6 @@ mkdir -p ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
 mkdir -p ~/.config/nvim/autoload
 cp autoload/plug.vim ~/.config/nvim/autoload/plug.vim
-nvim +'PlugInstall --sync' +qa
+/opt/nvim/bin/nvim +'PlugInstall --sync' +qa
+
+sudo echo 'export PATH="/opt/nvim/bin:$PATH"' >> ~/.bashrc
